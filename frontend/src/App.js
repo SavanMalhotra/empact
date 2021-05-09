@@ -8,6 +8,7 @@ import {
 import "./App.css";
 import SideMenu from "./components/SideMenu";
 import HomePage from "./components/HomePage"
+import NotesPage from "./components/NotesPage"
 function App(props) {
   return (
     <Router>
@@ -20,10 +21,9 @@ function App(props) {
             </div>
           </Route>
           <Route path="/notes">
-          <div className="pagecontainer">   <h1> Notes </h1> </div>
-          </Route>
-          <Route path="/job-search">
-          <div className="pagecontainer">   <h1> Job Search </h1> </div>
+          <div className="pagecontainer">   
+                <NotesPage />
+           </div> 
           </Route>
           <Route path="/to-do">
           <div className="pagecontainer">  <h1> To Do </h1> </div>
