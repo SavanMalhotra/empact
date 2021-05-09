@@ -14,25 +14,25 @@ function App(props) {
       <SideMenu />
       <Switch>
           <Route path="/index">
-            <h1> home </h1>
+            <div className="pagecontainer">  <h1> Home </h1> </div>
           </Route>
           <Route path="/notes">
-            <h1> notes </h1>
+          <div className="pagecontainer">   <h1> Notes </h1> </div>
           </Route>
           <Route path="/job-search">
-            <h1> Job Search </h1>
+          <div className="pagecontainer">   <h1> Job Search </h1> </div>
           </Route>
           <Route path="/to-do">
-            <h1> To Do </h1>
+          <div className="pagecontainer">  <h1> To Do </h1> </div>
           </Route>
           <Route path="/schedule">
-            <h1> Schedule </h1>
+          <div className="pagecontainer">   <h1> Schedule </h1> </div>
           </Route>
           <Route path="/account">
-            <h1> Account </h1>
+          <div className="pagecontainer"> <h1> Account </h1></div>
           </Route>
           <Route path="/gpa-calculator">
-            <h1> GPA Calculator </h1>
+          <div className="pagecontainer">  <h1> GPA Calculator </h1> </div>
           </Route>
       </Switch>
     </div>
