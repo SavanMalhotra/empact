@@ -1,18 +1,48 @@
 import SideMenuItems from "./SideMenuItems";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import logo from '../logo.svg'
+import logo from "../logo.svg";
 function SideMenu() {
-   const [activeTab, setActiveTab] = useState("")
-   console.log(activeTab)
+  const [activeTab, setActiveTab] = useState("");
+  console.log(activeTab);
   return (
-    <div className="SideMenu">
-        <SideMenuItems text="Home" onClick={() => setActiveTab("Home")} logo={logo} activeTab={activeTab}/>
-        <SideMenuItems text="Notes" onClick={() => setActiveTab("Notes")} logo={logo} activeTab={activeTab}/>
-        <SideMenuItems text="Job Search" onClick={() => setActiveTab("Job Search")} logo={logo} activeTab={activeTab}/>
-        <SideMenuItems text="To Do" onClick={() => setActiveTab("To Do")} logo={logo} activeTab={activeTab}/>
-        <SideMenuItems text="wap" onClick={() => setActiveTab("wap")} logo={logo} activeTab={activeTab}/>
-    </div>
+    <nav className="SideMenu">
+      <SideMenuItems
+        text="Home"
+        onClick={() => setActiveTab("Home")}
+        logo={logo}
+        activeTab={activeTab}
+        href="./index"
+      />
+      <SideMenuItems
+        text="Notes"
+        onClick={() => setActiveTab("Notes")}
+        logo={logo}
+        activeTab={activeTab}
+        href="./notes"
+      />
+      <SideMenuItems
+        text="Job Search"
+        onClick={() => setActiveTab("Job Search")}
+        logo={logo}
+        activeTab={activeTab}
+        href="./job-search"
+      />
+      <SideMenuItems
+        text="To Do"
+        onClick={() => setActiveTab("To Do")}
+        logo={logo}
+        activeTab={activeTab}
+        href="./to-do"
+      />
+      <SideMenuItems
+        text="wap"
+        onClick={() => setActiveTab("wap")}
+        logo={logo}
+        activeTab={activeTab}
+        href="./index"
+      />
+    </nav>
   );
 }
 

@@ -1,9 +1,10 @@
-import './App.css';
-import SideMenu from '../src/components/SideMenu'
-function App() {
+import "./App.css";
+import SideMenu from "./components/SideMenu";
+function App(props) {
   return (
     <div className="App">
       <SideMenu />
+      {props.children}
     </div>
   );
 }
