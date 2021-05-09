@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import SideMenu from "./components/SideMenu";
+import HomePage from "./components/HomePage"
 function App(props) {
   return (
     <Router>
@@ -14,7 +15,9 @@ function App(props) {
       <SideMenu />
       <Switch>
           <Route path="/index">
-            <div className="pagecontainer">  <h1> Home </h1> </div>
+            <div className="pagecontainer">
+                <HomePage />
+            </div>
           </Route>
           <Route path="/notes">
           <div className="pagecontainer">   <h1> Notes </h1> </div>
