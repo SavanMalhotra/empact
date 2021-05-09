@@ -1,10 +1,10 @@
 # empact
 
 ## Inspiration
-Due to Covid-19, education was forced to take a virtual approach. Unlike in-person learning, having everything online can cause confusion and there might not be any physical way to organize homework and projects. Therefore, we developed Empact to help students organize their online learning with different tools.
+Due to Covid-19, education was forced to take a virtual approach. Unlike in-person learning, having everything online can cause confusion and there might not be any physical way to organize homework and projects. Therefore, we developed Empact to help students organize and thrive in an online learning format with the use of our digital note summarization and topic generating tools.
 
 ## What it does
-Empact is a website that is designed to help students organize their virtual learning experience and assist their daily tasks through OpenAI API's. For instance, Empact has a feature that allowed a student to input their notes and the AI will be able to generate and give a summary of what they wrote. In addition, students will be able to save the summary under their account and reference back to it later. 
+Empact is a website that is designed to help students organize their virtual learning experience and assist their daily tasks through OpenAI API's. For instance, Empact has a feature that allowed a student to input their notes and the AI will be able to generate a summary of what they wrote. Empact also provides user's the option to ask a specific topic they are intersted in learning more about. The AI will return insightful topics to guide the student to learning more about the subject matter.
 
 ## How we built it
 The frontend web app was built using React.js and CSS to provide users with a clean and easy-to-use design. The backend used Flask and Python to fetch data from the OpenAI API.
@@ -13,14 +13,10 @@ The frontend web app was built using React.js and CSS to provide users with a cl
 Due to the time limitations and technical difficulties, lots of features that we wanted to add had to be scraped. 
 
 ## Accomplishments that we're proud of
--Completed something for the hackathon
--The code is able to read the OpenAI API
--Everyone learned new skills 
+We are proud to have shipped a working version of our web application. We enjoyed learning new skills along the way, specifically what OpenAi has to offer and how to integrate their API with our project. 
 
 ## What we learned 
--Manage time better
--Practice more react
--Learn more skills with React
+We learned to manage our time more efficively, develop stronger skills in React, and general knowledge of how web applications function and work with various components.
 
 ## What's next for Empact?
--We are focusing on adding more features to Empact, (accounts, calenders, GPA calculators, job finders, and to-do list) 
+We are focusing on adding more features to Empact including user accounts, calender integration, GPA calculators, job seeking tools, and to-do lists. 
