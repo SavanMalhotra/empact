@@ -36,11 +36,25 @@ function SideMenu() {
         href="./to-do"
       />
       <SideMenuItems
-        text="wap"
-        onClick={() => setActiveTab("wap")}
+        text="Schedule"
+        onClick={() => setActiveTab("Schedule")}
         logo={logo}
         activeTab={activeTab}
-        href="./index"
+        href="./schedule"
+      />
+      <SideMenuItems
+        text="Account"
+        onClick={() => setActiveTab("Account")}
+        logo={logo}
+        activeTab={activeTab}
+        href="./account"
+      />
+      <SideMenuItems
+        text="GPA Calculator"
+        onClick={() => setActiveTab("GPA Calculator")}
+        logo={logo}
+        activeTab={activeTab}
+        href="./gpa-calculator"
       />
     </nav>
   );

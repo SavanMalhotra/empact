@@ -43,6 +43,10 @@
   color: white;
 }
 
+svg{
+  fill:yellow
+}
+
 .SideMenu-items-is-active{
   color: yellow;
 }
