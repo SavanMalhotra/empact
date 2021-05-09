@@ -2,13 +2,16 @@
 import os
 import openai
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 from dotenv import load_dotenv
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 load_dotenv ()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route('/openai/create_study_notes/', methods=['POST'])
+@cross_origin(supports_credentials=True)
 def get_openai_create_study_notes():
     json_obj = request.get_json()
     prompt = json_obj['prompt']
@@ -24,6 +27,7 @@ def get_openai_create_study_notes():
     return jsonify("\n-" + response), 201
 
 @app.route('/openai/tldr/', methods=['POST'])
+@cross_origin(supports_credentials=True)
 def get_openai_tldr():
     json_obj = request.get_json()
     prompt = json_obj['prompt']
