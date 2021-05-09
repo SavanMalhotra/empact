@@ -1,8 +1,10 @@
 import os
 import openai
 from flask import Flask, jsonify, request
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+load_dotenv ()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route('/', methods=['GET', 'POST'])
@@ -20,28 +22,24 @@ def get_multiply10(num):
 @app.route('/openai/', methods=['POST'])
 def get_openai_response():
     json_obj = request.get_json()
-    # name = json_obj['name']
+    prompt = json_obj['prompt']
     response = openai.Completion.create(
-        engine="davinci",
-        prompt="This is a tweet sentiment classifier\nTweet: \"I loved the new Batman movie!\"\nSentiment: Positive\n###\nTweet: \"I hate it when my phone battery dies\"\nSentiment: Negative\n###\nTweet: \"My day has been 👍\"\nSentiment: Positive\n###\nTweet: \"This is the link to the article\"\nSentiment: Neutral\n###\nTweet text\n\n\n1. \"I loved the new Batman movie!\"\n2. \"I hate it when my phone battery dies\"\n3. \"My day has been 👍\"\n4. \"This is the link to the article\"\n5. \"This new music video blew my mind\"\n\n\nTweet sentiment ratings:\n1: Positive\n2: Negative\n3: Positive\n4: Neutral\n5: Positive\n\n\n###\nTweet text\n\n\n1. \"I can't stand homework\"\n2. \"This sucks. I'm bored 😠\"\n3. \"I can't wait for Halloween!!!\"\n4. \"My cat is adorable ❤️❤️\"\n5. \"I hate chocolate\"\n\n\nTweet sentiment ratings:\n1.",
-        temperature=0.3,
-        max_tokens=60,
+        engine="davinci-instruct-beta",
+        prompt=prompt,
+        temperature=1,
+        max_tokens=64,
         top_p=1.0,
         frequency_penalty=0.0,
-        presence_penalty=0.0,
-        stop=["###"]
-    )
-    return jsonify(response), 201
-
-    # return json object
-    # return jsonify({'parsed name': name}), 201 
-
-    # returns string
-    # return jsonify(name), 201
+        presence_penalty=0.0
+    ).choices[0].text
+    return jsonify("\n-" + response), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
 
 
+# Test command used to make sure request returns valid results
+# curl -H "Content-Type: application/json" -X POST -d '{"prompt":"What are some key points I should know when studying Ancient Rome?\n\n1.", "address":"address xyz"}' http://127.0.0.1:5000/openai/
 
-# curl -H "Content-Type: application/json" -X POST -d '{"name":"xyz", "address":"address xyz"}' http://127.0.0.1:5000/
+#Example repsonse
+#"\n- Rome was founded in 753 BCE.\n\n2. Julius Caesar was assassinated in 44 BCE.\n\n3. Rome was conquered during the rule of Constantine.\n\n4. aqueducts were a significant construction because they were the first to build support structures for building these \"flows\" of water.\n"
