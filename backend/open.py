@@ -1,10 +1,10 @@
+#quickstart python script provided by openai api
 import os
 import openai
 from dotenv import load_dotenv
 
 load_dotenv ()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
 prompt = "What are some key points I should know when studying Ancient Rome?\n\n1."
 
 response = openai.Completion.create(
